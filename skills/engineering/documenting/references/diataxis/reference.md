@@ -6,7 +6,7 @@ Reference holds durable facts a reader looks up: the glossary, decision records,
 
 | Kind | Path | Format |
 |---|---|---|
-| Glossary | `docs/reference/GLOSSARY.md` (single context) or `docs/reference/<ctx>/GLOSSARY.md` with a root `docs/reference/GLOSSARY-MAP.md` (multi-context) | `GLOSSARY-FORMAT.md` in the `domain-modeling` skill |
+| Glossary | `docs/reference/GLOSSARY.md` (single context) or `docs/reference/<ctx>/GLOSSARY.md` with `GLOSSARY-MAP.md` at the repo root (multi-context) | `GLOSSARY-FORMAT.md` in the `domain-modeling` skill |
 | Decision record | `docs/reference/architecture-decision-records/NNNN-<slug>.md` (single) or `docs/reference/<ctx>/architecture-decision-records/` (multi) | the decision record format in the `domain-modeling` skill |
 | Subject page | `docs/reference/<subject>.md` | template below |
 
@@ -35,9 +35,9 @@ description: <one line: the subject and what facts the page holds>
 
 ## Rules
 
-- **Durable facts only.** Each page passes the lifetime test: it survives a rewrite of the code and a contributor six months out would want it.
+- **Durable facts only.** Each page passes the lifetime test in the documenting `SKILL.md` (Lifetime test).
 - **One file per subject.** Extend the subject's page before creating a new one.
-- **Never CLI or API reference.** CLI (command-line interface) and API (application programming interface) surfaces are documented in source and the language's doc tooling, where they cannot go stale against the code.
+- **Subjects only, no command or endpoint surfaces.** The CLI/API exclusion in the documenting `SKILL.md` (Layout) applies.
 - **State, do not instruct or justify.** Steps belong in a how-to; why belongs in an FAQ entry. Link both from See also.
 - **Front-matter description names the subject** so a reader scanning descriptions finds the page.
 - **Spell out every acronym on first use.** ADR (architecture decision record) included; the folder name is spelled out for the same reason.

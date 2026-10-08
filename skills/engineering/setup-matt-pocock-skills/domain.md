@@ -18,6 +18,7 @@ docs/
 ├── reference/
 │   ├── GLOSSARY.md               ← single-context (multi-context: <context>/GLOSSARY.md)
 │   ├── architecture-decision-records/NNNN-<slug>.md
+│   ├── <context>/architecture-decision-records/   ← multi-context only
 │   └── <subject>.md              ← durable facts, one file per subject
 ├── faq/<topic>.md
 ├── tutorials/<name>.md
@@ -28,7 +29,7 @@ docs/
 
 1. The glossary (or the glossaries the map names) for the area you're working in.
 2. The decision records that touch that area.
-3. Every file under `how-to/`, `reference/`, `faq/`, and `tutorials/` carries YAML front-matter with a one-line `description:`. Scan those descriptions (`grep -r '^description:' docs/`) and open only the matches. Never read the whole tree.
+3. Every file under `how-to/`, `reference/`, `faq/`, and `tutorials/` carries YAML front-matter with a one-line `description:`. Scan those descriptions (`grep -r '^description:' docs/`) and read only the matching pages; the whole tree only when writing `docs/README.md`.
 
 ## Use the glossary's vocabulary
 

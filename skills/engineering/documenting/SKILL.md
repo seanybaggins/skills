@@ -5,7 +5,7 @@ description: Write or organise project documentation in the Diátaxis layout und
 
 # Documenting
 
-Documentation lives under `docs/` in four Diátaxis quadrants (how-to, reference, FAQ, tutorials). Diátaxis calls the third quadrant "explanation"; this layout calls it **FAQ** (frequently asked questions) everywhere. Runnable by hand as `/documenting <what>`.
+Documentation lives under `docs/` in four Diátaxis quadrants (how-to, reference, FAQ, tutorials). Diátaxis calls the third quadrant "explanation"; this layout calls it **FAQ** (frequently asked questions) everywhere.
 
 ## Layout
 
@@ -15,7 +15,7 @@ docs/
 ├── how-to/<goal>.md
 ├── reference/
 │   ├── GLOSSARY.md               ← single-context
-│   ├── <ctx>/GLOSSARY.md         ← multi-context; root GLOSSARY-MAP.md points here
+│   ├── <ctx>/GLOSSARY.md         ← multi-context; GLOSSARY-MAP.md at the repo root points here
 │   ├── architecture-decision-records/NNNN-<slug>.md
 │   └── <subject>.md              ← durable facts, one file per subject
 ├── faq/<topic>.md
@@ -41,11 +41,11 @@ Promoting `.scratch/research/<topic>.md` runs the same test on each finding; sur
 
 - **Front-matter.** Every file in how-to, reference, faq, tutorials opens with YAML (YAML Ain't Markup Language) front-matter carrying a one-line `description:`. Readers scan descriptions (`grep -r '^description:' docs/`) and open only matches; a page without one is invisible.
 - **Acronym rule.** Spell out every acronym on first use in every file you write, docs or otherwise (PR bodies, tickets, specs, handoffs). ADR (architecture decision record) is not an exception. "Diátaxis" is a name, not an acronym.
-- **No em-dashes.** Use a comma, colon, period, or parentheses.
+- **Punctuation.** Punctuate with commas, colons, periods, or parentheses.
 
 ## Reading before writing
 
-Scan descriptions, open matches, and extend an existing page before creating a new one. Read the whole tree only when writing `docs/README.md`.
+Scan descriptions and read only matching pages; extend an existing page before creating a new one. Read the whole tree only when writing `docs/README.md`.
 
 ## Pick the quadrant
 

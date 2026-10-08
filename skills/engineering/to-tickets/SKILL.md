@@ -18,7 +18,7 @@ Work from whatever is already in the conversation context. If the user passes a 
 
 ### 2. Explore the codebase (optional)
 
-If you have not already explored the codebase, do so to understand the current state of the code. Ticket titles and descriptions should use the vocabulary of the glossary and decision records at the paths named in `docs/agents/domain.md`, and respect decisions in the area you're touching. Scan `docs/` front-matter descriptions for relevant how-tos and FAQ entries, opening only matches. Spell out every acronym on first use.
+If you have not already explored the codebase, do so to understand the current state of the code. Ticket titles and descriptions should use the vocabulary of the glossary and decision records at the paths named in `docs/agents/domain.md`, and respect decisions in the area you're touching. Scan `docs/` front-matter descriptions for relevant how-tos and FAQ (frequently asked questions) entries, opening only matches. Spell out every acronym on first use.
 
 Look for opportunities to prefactor the code to make the implementation easier. "Make the change easy, then make the easy change."
 

@@ -4,8 +4,6 @@ Architecture decision records (ADRs) live in `docs/reference/architecture-decisi
 
 Create the directory lazily: only when the first ADR is needed.
 
-Spell out every acronym on first use in each record.
-
 ## Template
 
 ```md

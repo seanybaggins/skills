@@ -1,6 +1,6 @@
-# FAQ
+# FAQ (frequently asked questions)
 
-The FAQ (frequently asked questions) quadrant is where the why lives: reasoning, trade-offs, context, and history that no how-to or reference page should carry. Path: `docs/faq/<topic>.md`, one file per topic, one `###` heading per question.
+The FAQ quadrant is where the why lives: reasoning, trade-offs, context, and history that no how-to or reference page should carry. Path: `docs/faq/<topic>.md`, one file per topic, one `###` heading per question.
 
 ## Template
 

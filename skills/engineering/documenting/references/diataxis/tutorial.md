@@ -4,7 +4,7 @@ A tutorial walks a beginner through a complete path on one page. Path: `docs/tut
 
 ## When to propose one
 
-Propose a tutorial when at least one how-to, plus the FAQ (frequently asked questions) entries and reference pages it links, cover a beginner's path end to end. Name the pages in the proposal. Write only after the user confirms; never write one unprompted.
+Follow the tutorial proposal rule in the documenting `SKILL.md` (Tutorial proposal rule); the FAQ (frequently asked questions) entries and reference pages a how-to links are part of the path it names.
 
 ## Template
 

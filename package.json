@@ -2,7 +2,7 @@
   "name": "sean-link-skills",
   "version": "1.4.0",
   "private": true,
-  "description": "Matt Pocock's agent skills for real engineering",
+  "description": "Sean Link's fork of Matt Pocock's agent skills for real engineering",
   "repository": {
     "type": "git",
     "url": "https://github.com/seanybaggins/skills"

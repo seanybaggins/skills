@@ -19,5 +19,5 @@ A document earns a place here only if it survives a rewrite of the code it descr
 ## Conventions
 
 - Spell out every acronym on first use in every file.
-- How-tos hold no "why"; the why becomes an FAQ entry linked from the how-to's See also.
+- How-tos hold no "why"; the why becomes an FAQ (frequently asked questions) entry linked from the how-to's See also.
 - `/documenting` writes to this tree and applies these rules.

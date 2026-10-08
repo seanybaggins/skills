@@ -8,7 +8,7 @@ Implement the work described by the user in the spec or tickets.
 
 If the user passes a ticket reference, fetch it from the issue tracker and state its title before starting. If the reference is ambiguous, ask.
 
-Before changing code, read the glossary and decision records at the paths named in `docs/agents/domain.md`. Scan `docs/` front-matter descriptions for relevant how-tos and FAQ entries, opening only matches.
+Before changing code, read the glossary and decision records at the paths named in `docs/agents/domain.md`. Scan `docs/` front-matter descriptions for relevant how-tos and FAQ (frequently asked questions) entries, opening only matches.
 
 Call the Skill tool with "tdd" where possible, at pre-agreed seams.
 
