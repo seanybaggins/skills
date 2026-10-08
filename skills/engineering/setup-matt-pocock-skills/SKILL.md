@@ -10,7 +10,7 @@ Scaffold the per-repo configuration that the engineering skills assume:
 
 - **Issue tracker**: where issues live (GitHub by default; local markdown is also supported out of the box)
 - **Triage labels**: the strings used for the five canonical triage roles
-- **Domain docs**: where `GLOSSARY.md` and ADRs live, and the consumer rules for reading them
+- **Domain docs**: where the glossary and architecture decision records (ADRs) live, the `docs/` tree layout, and the consumer rules for reading them
 
 This is a prompt-driven skill, not a deterministic script. Explore, present what you found, confirm with the user, then write.
 
@@ -22,8 +22,10 @@ Look at the current repo to understand its starting state. Read whatever exists;
 
 - `git remote -v` and `.git/config`: is this a GitHub repo? Which one?
 - `AGENTS.md` and `CLAUDE.md` at the repo root: does either exist? Is there already an `## Agent skills` section in either?
-- `GLOSSARY.md` and `GLOSSARY-MAP.md` at the repo root
-- `docs/adr/` and any `src/*/docs/adr/` directories
+- `docs/reference/GLOSSARY.md`, or `GLOSSARY-MAP.md` at the repo root plus `docs/reference/*/GLOSSARY.md`
+- `docs/reference/architecture-decision-records/` and any `docs/reference/*/architecture-decision-records/`
+- Legacy locations: `GLOSSARY.md` at the repo root, `docs/adr/`, `src/*/GLOSSARY.md`, `src/*/docs/adr/`. Note each one found; Section C offers to move them.
+- `docs/README.md`: does the orientation page exist?
 - `docs/agents/`: does this skill's prior output already exist?
 - `.scratch/`: a sign that a local-markdown issue tracker convention is already in use
 - Is the `triage` skill installed? (a `triage` skill folder alongside this one, or `triage` in your available skills.) This decides whether Section B runs at all.
@@ -56,9 +58,15 @@ If it is installed, ask exactly one question:
 
 The defaults are the five canonical roles, each label string equal to its name: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. On **yes**, write them as-is. Only if the user says no, usually because their tracker already uses other names (e.g. `bug:triage` for `needs-triage`), collect the overrides so `triage` applies existing labels instead of creating duplicates.
 
-**Section C: Domain docs.** Default to **single-context** (one `GLOSSARY.md` + `docs/adr/` at the repo root). This fits almost every repo; write it without asking.
+**Section C: Domain docs.** Default to **single-context** (`docs/reference/GLOSSARY.md` + `docs/reference/architecture-decision-records/`). This fits almost every repo; write it without asking.
 
-Offer **multi-context** (a root `GLOSSARY-MAP.md` pointing to per-context `GLOSSARY.md` files) only when exploration found monorepo signals. Then confirm which layout they want.
+Offer **multi-context** (a root `GLOSSARY-MAP.md` pointing to `docs/reference/<context>/GLOSSARY.md` files, each context with its own `architecture-decision-records/`) only when exploration found monorepo signals. Then confirm which layout they want.
+
+When exploration found legacy files (root `GLOSSARY.md`, `docs/adr/`, or their `src/<context>/` equivalents), ask before touching them:
+
+> Move `<legacy path>` to `<new path>` with `git mv`? (recommended: **yes**)
+
+On yes, `git mv` each one. On no, leave it in place. Either way, `docs/agents/domain.md` records the path that actually results, so consumers read the right location.
 
 ### 3. Confirm and edit
 
@@ -66,6 +74,7 @@ Show the user a draft of:
 
 - The `## Agent skills` block to add to whichever of `CLAUDE.md` / `AGENTS.md` is being edited (see step 4 for selection rules)
 - The contents of `docs/agents/issue-tracker.md`, `docs/agents/domain.md`, and `docs/agents/triage-labels.md` (the last only when `triage` is installed)
+- `docs/README.md`, only when it is absent
 
 Let them edit before writing.
 
@@ -96,7 +105,7 @@ The block:
 
 ### Domain docs
 
-[one-line summary of layout: "single-context" or "multi-context"]. See `docs/agents/domain.md`.
+[one-line summary of layout: "single-context" or "multi-context"]. Glossary and architecture decision records live under `docs/reference/`; the tree is described in `docs/README.md`. See `docs/agents/domain.md`.
 ```
 
 Include the `### Triage labels` sub-block, and write `docs/agents/triage-labels.md`, only when `triage` is installed and Section B ran. When it isn't, both are omitted.
@@ -109,7 +118,8 @@ Then write the docs files using the seed templates in this skill folder as a sta
 - [issue-tracker-gitlab.md](./issue-tracker-gitlab.md): GitLab issue tracker
 - [issue-tracker-local.md](./issue-tracker-local.md): local-markdown issue tracker
 - [triage-labels.md](./triage-labels.md): label mapping (only if `triage` is installed)
-- [domain.md](./domain.md): domain doc consumer rules + layout
+- [domain.md](./domain.md): domain doc consumer rules + layout. Edit the paths to match Section C's outcome, including any legacy file the user chose to leave in place.
+- [docs-readme.md](./docs-readme.md): the `docs/README.md` orientation page. Write it only when `docs/README.md` is absent; never overwrite an existing one.
 
 For "other" issue trackers, write `docs/agents/issue-tracker.md` from scratch using the user's description.
 
