@@ -1,8 +1,12 @@
-# GLOSSARY.md Format
+# Glossary Format
 
 ## Structure
 
 ```md
+---
+description: {One line: the context this glossary defines terms for}
+---
+
 # {Context Name}
 
 {One or two sentence description of what this context is and why it exists.}
@@ -31,18 +35,18 @@ _Avoid_: Client, buyer, account
 
 ## Single vs multi-context repos
 
-**Single context (most repos):** One `GLOSSARY.md` at the repo root.
+**Single context (most repos):** One glossary at `docs/reference/GLOSSARY.md`.
 
-**Multiple contexts:** A `GLOSSARY-MAP.md` at the repo root lists the contexts, where they live, and how they relate to each other:
+**Multiple contexts:** A `GLOSSARY-MAP.md` at the repo root lists the contexts, where they live, and how they relate to each other. Each context's glossary lives at `docs/reference/<context>/GLOSSARY.md`:
 
 ```md
 # Glossary Map
 
 ## Contexts
 
-- [Ordering](./src/ordering/GLOSSARY.md): receives and tracks customer orders
-- [Billing](./src/billing/GLOSSARY.md): generates invoices and processes payments
-- [Fulfillment](./src/fulfillment/GLOSSARY.md): manages warehouse picking and shipping
+- [Ordering](./docs/reference/ordering/GLOSSARY.md): receives and tracks customer orders
+- [Billing](./docs/reference/billing/GLOSSARY.md): generates invoices and processes payments
+- [Fulfillment](./docs/reference/fulfillment/GLOSSARY.md): manages warehouse picking and shipping
 
 ## Relationships
 
@@ -54,7 +58,7 @@ _Avoid_: Client, buyer, account
 The skill infers which structure applies:
 
 - If `GLOSSARY-MAP.md` exists, read it to find contexts
-- If only a root `GLOSSARY.md` exists, single context
-- If neither exists, create a root `GLOSSARY.md` lazily when the first term is resolved
+- If only `docs/reference/GLOSSARY.md` exists, single context
+- If neither exists, create `docs/reference/GLOSSARY.md` lazily when the first term is resolved
 
 When multiple contexts exist, infer which one the current topic relates to. If unclear, ask.

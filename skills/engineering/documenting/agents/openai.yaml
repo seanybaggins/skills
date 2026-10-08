@@ -1,0 +1,3 @@
+interface:
+  display_name: "Documenting"
+  short_description: "Write docs in the Diátaxis layout"

@@ -34,7 +34,7 @@ Use this template for writing the PR body:
 
 ## Sections
 
-Skip all preambles and keep prose brief. Use the user's domain language from `GLOSSARY.md`.
+Skip all preambles and keep prose brief. Use the user's domain language from the glossary at the path named in `docs/agents/domain.md`. Spell out every acronym on first use.
 
 ### Summary
 
