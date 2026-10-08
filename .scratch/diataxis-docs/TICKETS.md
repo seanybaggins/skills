@@ -6,7 +6,7 @@
 | T2 | domain-modeling + grill-with-docs paths | none | open |
 | T3 | setup-matt-pocock-skills domain.md and docs/README.md | none | open |
 | T4 | consumer skills: domain.md paths, description scan, acronym rule | none | open |
-| T5 | research saves to .scratch/research | none | open |
+| T5 | research saves to .scratch/research | none | done |
 | T6 | ask-matt routes to documenting | T1 | open |
 | T7 | fork plumbing: manifests, README, validate | T1 | open |
 | T8 | nix-home: sean-link marketplace | none | open |
