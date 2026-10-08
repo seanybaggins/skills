@@ -1,8 +1,12 @@
-# GLOSSARY.md Format
+# Glossary Format
 
 ## Structure
 
 ```md
+---
+description: {One line: the context this glossary defines terms for}
+---
+
 # {Context Name}
 
 {One or two sentence description of what this context is and why it exists.}
@@ -26,23 +30,25 @@ _Avoid_: Client, buyer, account
 
 - **Be opinionated.** When multiple words exist for the same concept, pick the best one and list the others under `_Avoid_`.
 - **Keep definitions tight.** One or two sentences max. Define what it IS, not what it does.
+- **Spell out every acronym on first use.** A glossary is where readers go when they meet an unfamiliar term, so an unexplained acronym defeats its purpose.
 - **Only include terms specific to this project's context.** General programming concepts (timeouts, error types, utility patterns) don't belong even if the project uses them extensively. Before adding a term, ask: is this a concept unique to this context, or a general programming concept? Only the former belongs.
 - **Group terms under subheadings** when natural clusters emerge. If all terms belong to a single cohesive area, a flat list is fine.
+- **Keep decisions out.** Why a term is modelled a certain way belongs in an architecture decision record (ADR), not the glossary. See [DECISION-RECORD-FORMAT.md](./DECISION-RECORD-FORMAT.md).
 
 ## Single vs multi-context repos
 
-**Single context (most repos):** One `GLOSSARY.md` at the repo root.
+**Single context (most repos):** One glossary at `docs/reference/GLOSSARY.md`.
 
-**Multiple contexts:** A `GLOSSARY-MAP.md` at the repo root lists the contexts, where they live, and how they relate to each other:
+**Multiple contexts:** A `GLOSSARY-MAP.md` at the repo root lists the contexts, where they live, and how they relate to each other. Each context's glossary lives at `docs/reference/<context>/GLOSSARY.md`:
 
 ```md
 # Glossary Map
 
 ## Contexts
 
-- [Ordering](./src/ordering/GLOSSARY.md): receives and tracks customer orders
-- [Billing](./src/billing/GLOSSARY.md): generates invoices and processes payments
-- [Fulfillment](./src/fulfillment/GLOSSARY.md): manages warehouse picking and shipping
+- [Ordering](./docs/reference/ordering/GLOSSARY.md): receives and tracks customer orders
+- [Billing](./docs/reference/billing/GLOSSARY.md): generates invoices and processes payments
+- [Fulfillment](./docs/reference/fulfillment/GLOSSARY.md): manages warehouse picking and shipping
 
 ## Relationships
 
@@ -54,7 +60,7 @@ _Avoid_: Client, buyer, account
 The skill infers which structure applies:
 
 - If `GLOSSARY-MAP.md` exists, read it to find contexts
-- If only a root `GLOSSARY.md` exists, single context
-- If neither exists, create a root `GLOSSARY.md` lazily when the first term is resolved
+- If only `docs/reference/GLOSSARY.md` exists, single context
+- If neither exists, create `docs/reference/GLOSSARY.md` lazily when the first term is resolved
 
 When multiple contexts exist, infer which one the current topic relates to. If unclear, ask.
