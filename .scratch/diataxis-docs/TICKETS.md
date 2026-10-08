@@ -2,7 +2,7 @@
 
 | id | title | blocked by | status |
 |----|-------|-----------|--------|
-| T1 | documenting skill | none | open |
+| T1 | documenting skill | none | done |
 | T2 | domain-modeling + grill-with-docs paths | none | open |
 | T3 | setup-matt-pocock-skills domain.md and docs/README.md | none | open |
 | T4 | consumer skills: domain.md paths, description scan, acronym rule | none | open |
