@@ -7,7 +7,7 @@ description: Diagnosis loop for hard bugs and performance regressions. Use when 
 
 A discipline for hard bugs. Skip phases only when explicitly justified.
 
-When exploring the codebase, read `GLOSSARY.md` (if it exists) to get a clear mental model of the relevant modules, and check ADRs in the area you're touching.
+When exploring the codebase, read the glossary and decision records at the paths named in `docs/agents/domain.md` to get a clear mental model of the relevant modules, and check decisions in the area you're touching. Scan `docs/` front-matter descriptions for relevant how-tos and FAQ entries, opening only matches.
 
 ## Redact
 
