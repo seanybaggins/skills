@@ -1,12 +1,18 @@
-# ADR Format
+# Decision Record Format
 
-ADRs live in `docs/adr/` and use sequential numbering: `0001-slug.md`, `0002-slug.md`, etc.
+Architecture decision records (ADRs) live in `docs/reference/architecture-decision-records/` (or `docs/reference/<context>/architecture-decision-records/` in a multi-context repo) and use sequential numbering: `0001-slug.md`, `0002-slug.md`, etc.
 
-Create the `docs/adr/` directory lazily: only when the first ADR is needed.
+Create the directory lazily: only when the first ADR is needed.
+
+Spell out every acronym on first use in each record.
 
 ## Template
 
 ```md
+---
+description: {One line: what was decided}
+---
+
 # {Short title of the decision}
 
 {1-3 sentences: what's the context, what did we decide, and why.}
@@ -24,7 +30,7 @@ Only include these when they add genuine value. Most ADRs won't need them.
 
 ## Numbering
 
-Scan `docs/adr/` for the highest existing number and increment by one.
+Scan the `architecture-decision-records/` directory for the highest existing number and increment by one.
 
 ## When to offer an ADR
 
