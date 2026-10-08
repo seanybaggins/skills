@@ -8,7 +8,7 @@
 | T4 | consumer skills: domain.md paths, description scan, acronym rule | none | open |
 | T5 | research saves to .scratch/research | none | done |
 | T6 | ask-matt routes to documenting | T1 | done |
-| T7 | fork plumbing: manifests, README, validate | T1 | open |
+| T7 | fork plumbing: manifests, README, validate | T1 | done |
 | T8 | nix-home: sean-link marketplace | none | done |
 
 Each ticket's detail is its section in SPEC.md. Close by setting status to done.
